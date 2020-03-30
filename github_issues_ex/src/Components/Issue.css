@@ -1,0 +1,11 @@
+.Issue {
+    display:flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 0 80px;
+    margin: auto 250px;
+    overflow: scroll;
+    max-height: 200px;
+    
+    border: 1px solid black;
+}

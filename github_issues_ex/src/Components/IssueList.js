@@ -9,7 +9,7 @@ class IssueList extends Component {
             issues: []
         };
     }
-    
+
     async componentDidMount() {
         try {
             const response = await fetch (`https://api.github.com/repos/facebook/create-react-app/issues`);
@@ -38,9 +38,9 @@ class IssueList extends Component {
     
         return (
             <div className="IssueList">
-                <ul>
+                <container>
                     {issuePopulate}
-                </ul> 
+                </container>
             </div>
         );
      }
