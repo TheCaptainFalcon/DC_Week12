@@ -20,7 +20,7 @@ class IssueList extends Component {
             })
             
             // Dev Test
-            console.log(data);
+            // console.log(data);
 
         } catch(error) {
             console.log(error);
@@ -29,18 +29,21 @@ class IssueList extends Component {
 
     render() { 
         const { issues } = this.state;
+        
+        // dev test
+        // console.log(issues);
         return (
             <div className="IssueList">
-                <container>
+                <div>
                     {issues.map(issue => (
                         
-                    <div>
-                        <h3>{issue.title}</h3>
+                    <li className='IssueList-key' key={issue.id}>
+                        {issue.title}
                         <p><Link to={`/issue/${issue.number}`}>More Details</Link></p>
-                    </div>
+                    </li>
                     
                     ))}
-                </container>
+                </div>
             </div>
         );
      }
