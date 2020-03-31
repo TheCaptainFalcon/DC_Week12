@@ -27,19 +27,17 @@ class IssueList extends Component {
     }
 
     render() { 
-        let issuePopulate;
-        issuePopulate = this.state.issues.map((issue) => {
-            return <Issue 
-            title={issue.title} 
-            url={issue.url}
-            body={issue.body} 
-            />
-        })
-    
+        const { issues } = this.state;
         return (
             <div className="IssueList">
                 <container>
-                    {issuePopulate}
+                    {issues.map(issue => (
+                        <Issue 
+                        title={issue.title} 
+                        url={issue.url} 
+                        body={issue.body}
+                        />
+                    ))}
                 </container>
             </div>
         );
