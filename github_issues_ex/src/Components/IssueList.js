@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './IssueList.css';
-import Issue from './Issue';
+
 
 class IssueList extends Component {
     constructor(props) {
@@ -32,11 +33,12 @@ class IssueList extends Component {
             <div className="IssueList">
                 <container>
                     {issues.map(issue => (
-                        <Issue 
-                        title={issue.title} 
-                        url={issue.url} 
-                        body={issue.body}
-                        />
+                        
+                    <div>
+                        <h3>{issue.title}</h3>
+                        <p><Link to={`/issue/${issue.number}`}>More Details</Link></p>
+                    </div>
+                    
                     ))}
                 </container>
             </div>

@@ -7,8 +7,13 @@ class IssueDetail extends Component {
         this.state = {  }
     }
     render() { 
+        const { issue_number } = this.props.match.params
+        console.log(this.props);
         return (  
-            
+            <div>
+                <p>{ issue_number }</p>
+            </div>
+
         );
     }
 }
