@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './IssueList.css';
-import Issue from './Issue';
+
 
 class IssueList extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class IssueList extends Component {
             })
             
             // Dev Test
-            console.log(data);
+            // console.log(data);
 
         } catch(error) {
             console.log(error);
@@ -27,20 +28,22 @@ class IssueList extends Component {
     }
 
     render() { 
-        let issuePopulate;
-        issuePopulate = this.state.issues.map((issue) => {
-            return <Issue 
-            title={issue.title} 
-            url={issue.url}
-            body={issue.body} 
-            />
-        })
-    
+        const { issues } = this.state;
+        
+        // dev test
+        // console.log(issues);
         return (
             <div className="IssueList">
-                <container>
-                    {issuePopulate}
-                </container>
+                <div>
+                    {issues.map(issue => (
+                        
+                    <li className='IssueList-key' key={issue.id}>
+                        {issue.title}
+                        <p><Link to={`/issue/${issue.number}`}>More Details</Link></p>
+                    </li>
+                    
+                    ))}
+                </div>
             </div>
         );
      }
