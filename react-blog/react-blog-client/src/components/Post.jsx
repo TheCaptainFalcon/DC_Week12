@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import './Post.css';
 import Comment from './Comment';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
 class Post extends Component {
   state = {
@@ -36,6 +38,14 @@ class Post extends Component {
 
     return (
       <div className="Post">
+        <nav className="Post-nav">
+          <Navbar bg="dark" variant="dark">
+            <Nav className="mr-auto">
+              <Nav.Link><Link to="/">Home</Link></Nav.Link>
+              <Nav.Link><Link to="/post">Post</Link></Nav.Link>
+            </Nav>
+          </Navbar>
+        </nav>
         <h1>{post.title}</h1>
         <p>{post.content}</p>
         

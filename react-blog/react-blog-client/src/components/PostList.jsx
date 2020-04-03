@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './PostList.css';
 import { Link } from "react-router-dom";
+import { Navbar, Nav } from 'react-bootstrap';
 
 class PostList extends Component {
   state = {
@@ -31,6 +32,14 @@ class PostList extends Component {
 
     return (
       <div className="PostList">
+        <nav className="PostList-nav">
+          <Navbar bg="dark" variant="dark">
+              <Nav className="mr-auto">
+                <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                <Nav.Link><Link to="/post">Post</Link></Nav.Link>
+              </Nav>
+            </Navbar>
+        </nav>
         <h1>This is a blog</h1>
         
           {posts.map(post => (

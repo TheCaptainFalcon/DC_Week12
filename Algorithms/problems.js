@@ -1,4 +1,5 @@
 // Problem #2 
+// 2. Write a function that multiples two numbers (provided as arguments) without using *
 // Works with "some" negative numbers, if a is ever negative it will fail bc loop will never run
 function help(a,b) {
     let result = 0;

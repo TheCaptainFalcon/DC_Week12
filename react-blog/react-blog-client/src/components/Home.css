@@ -1,0 +1,12 @@
+.active-link {
+    color: pink;
+}
+
+.Home img {
+    box-shadow: 3px 3px 3px #343a40;
+}
+
+.Home, html {
+    background-color: #F7DCB4;
+    
+}
